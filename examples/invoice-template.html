@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { font-family: system-ui, sans-serif; margin: 36px; color: #111; }
+  h1 { font-size: 22px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  th, td { text-align: left; padding: 8px 0; border-bottom: 1px solid #ddd; font-size: 14px; }
+</style>
+</head>
+<body>
+  <h1>Invoice {{order.number}}</h1>
+  <p>{{billing.name}} · {{billing.email}}</p>
+  <p>Date: {{order.date}} · Total: {{order.currency}} {{order.total}}</p>
+  <table>
+    <thead><tr><th>Item</th><th>Qty</th><th>Total</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>{{line_items.0.name}}</td>
+        <td>{{line_items.0.quantity}}</td>
+        <td>{{order.currency}} {{line_items.0.total}}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
